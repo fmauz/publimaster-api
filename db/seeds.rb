@@ -1,5 +1,5 @@
-FactoryGirl.create_list( :material, 5 )
-FactoryGirl.create_list( :segment, 5 )
+# FactoryGirl.create_list( :material, 5 )
+# FactoryGirl.create_list( :segment, 5 )
 
 ClientType.create!(name: "Pessoa Física")
 ClientType.create!(name: "Pessoa Jurídica")
