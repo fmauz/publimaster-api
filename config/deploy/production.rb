@@ -1,6 +1,6 @@
 server "201.76.167.41", user: 'webserver', roles: %w{web app}
 
-set :application, "publimaster"
+set :application, "publimaster-api"
 
 set :scm, :git
 set :repo_url, "git@github.com:fmauz/publimaster-api.git"
