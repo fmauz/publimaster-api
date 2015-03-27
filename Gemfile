@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.1.3'
+ruby '2.1.4'
 
 gem 'rails', '4.1.6'
 gem 'rails-api'
@@ -18,11 +18,6 @@ group :test, :development do
 	gem 'factory_girl_rails'
   gem 'pry'
   gem 'awesome_print'
-  gem 'heroku'
-end
-
-group :production do
-  gem 'thin'
 end
 
 gem "active_model_serializers", "~> 0.8.0"
