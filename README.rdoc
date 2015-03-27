@@ -1,0 +1,8 @@
+=== Todo:
+
+Gerenciamento de funcionários, colocar informações para dizer se o func. é terceirizado ou interno.
+
+
+=== Referencia:
+
+# http://www.realpublicidade.com.br
