@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
   before_validation(on: :create) do
     self.uid = self.email
     self.provider = "email"
+    self.skip_confirmation!
   end
 
   def as_json(attr)
