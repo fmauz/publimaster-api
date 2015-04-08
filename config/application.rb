@@ -21,7 +21,8 @@ module Publimaster
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    # config.i18n.default_locale = :de
+    config.i18n.default_locale = 'pt-BR'
+
     config.to_prepare do
       DeviseTokenAuth::SessionsController.skip_before_filter :authenticate_user!
     end
