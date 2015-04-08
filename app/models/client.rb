@@ -4,7 +4,10 @@ class Client < ActiveRecord::Base
   belongs_to :segment
   belongs_to :employee
 
+  has_many :responsibles
+  
   accepts_nested_attributes_for :address
+  accepts_nested_attributes_for :responsibles
 
   default_scope ->{ order( :name ) }
 

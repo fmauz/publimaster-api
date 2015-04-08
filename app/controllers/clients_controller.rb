@@ -41,13 +41,15 @@ class ClientsController < ApplicationController
   end
 
   def client_params
-    objParam = params.permit( :name, :cpf_cnpj, :responsible, :director, :accountant, :client_group, :observation, :segment_id, :employee_id, :client_type_id,
+    objParam = params.permit( :name, :cpf_cnpj, :director, :accountant, :client_group, :observation, :segment_id, :employee_id, :client_type_id,
                               address: [ :id, :street_suffix_id, :street_address, :secondary_address, :building_number, :neighborhood, :city_id, :state_id, :zipcode,
                                   contact_phones: [ :id, :area_code, :phone_number, :extension, :is_fax, :_destroy ],
                                   contact_emails: [ :id, :email, :contact, :_destroy ]
-                                ] )
+                                ],
+                              responsibles: [ :id, :name, :sector, :birthday, :cellphone, :phone, :_destroy]  )
     objParam.to_hash.rename_keys( { "address" => "address_attributes",
                                     "contact_phones" => "contact_phones_attributes",
-                                    "contact_emails" => "contact_emails_attributes" } )
+                                    "contact_emails" => "contact_emails_attributes",
+                                    "responsibles" => "responsibles_attributes" } )
   end
 end

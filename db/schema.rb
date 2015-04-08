@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150322172029) do
+ActiveRecord::Schema.define(version: 20150408153816) do
 
   create_table "addresses", force: true do |t|
     t.string   "street_address"
@@ -173,6 +173,19 @@ ActiveRecord::Schema.define(version: 20150322172029) do
   add_index "publicacaos", ["diario_oficial_material_id"], name: "index_publicacaos_on_diario_oficial_material_id", using: :btree
   add_index "publicacaos", ["jornal_id"], name: "index_publicacaos_on_jornal_id", using: :btree
   add_index "publicacaos", ["jornal_material_id"], name: "index_publicacaos_on_jornal_material_id", using: :btree
+
+  create_table "responsibles", force: true do |t|
+    t.string   "name"
+    t.string   "sector"
+    t.date     "birthday"
+    t.string   "cellphone"
+    t.string   "phone"
+    t.integer  "client_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "responsibles", ["client_id"], name: "index_responsibles_on_client_id", using: :btree
 
   create_table "retrancas", force: true do |t|
     t.string   "name"
