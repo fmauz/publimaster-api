@@ -4,10 +4,10 @@ class Client < ActiveRecord::Base
   belongs_to :segment
   belongs_to :employee
 
-  has_many :responsibles
+  has_many :responsibles, dependent: :destroy
   
   accepts_nested_attributes_for :address
-  accepts_nested_attributes_for :responsibles
+  accepts_nested_attributes_for :responsibles, allow_destroy: true
 
   default_scope ->{ order( :name ) }
 
