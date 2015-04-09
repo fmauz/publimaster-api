@@ -13,8 +13,8 @@ class UserSerializer < ActiveModel::Serializer
 
   def avatar
     { 
-      medium:  URI.join(ActionController::Base.asset_host, self.object.avatar.url(:medium) ).to_s,
-      thumb: URI.join(ActionController::Base.asset_host, self.object.avatar.url(:thumb) ).to_s
+      medium:  self.object.avatar.url(:medium),
+      thumb: self.object.avatar.url(:thumb)
     }
   end
 end
