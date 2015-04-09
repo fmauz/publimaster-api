@@ -12,9 +12,16 @@ class UserSerializer < ActiveModel::Serializer
   end
 
   def avatar
-    { 
-      medium:  self.object.avatar.url(:medium),
-      thumb: self.object.avatar.url(:thumb)
-    }
+    if Rails.env == "development"
+      { 
+        medium:  URI.join(ActionController::Base.asset_host, self.object.avatar.url(:medium) ).to_s,
+        thumb: URI.join(ActionController::Base.asset_host, self.object.avatar.url(:thumb) ).to_s
+      }
+    else
+      { 
+        medium:  self.object.avatar.url(:medium),
+        thumb: self.object.avatar.url(:thumb)
+      }
+    end
   end
 end
