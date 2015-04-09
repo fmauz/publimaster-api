@@ -19,6 +19,8 @@ class Client < ActiveRecord::Base
             :employee,
             presence: true
 
+  validates :cpf_cnpj, uniqueness: true 
+
   def self.search( query )
     if !query.blank?
       joins(:segment)

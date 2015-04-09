@@ -10,4 +10,6 @@ class Employee < ActiveRecord::Base
             :user,
             :address,
             presence: true
+
+  validates :cpf, uniqueness: true
 end
