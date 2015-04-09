@@ -50,7 +50,7 @@ class EmployeesController < ApplicationController
                               user: [ :id, :email, :password, :password_confirmation, :role_id, upload: [:filetype, :filename, :filesize, :base64] ]
                             ).to_hash
 
-    if objParam["user"]["password"].blank?
+    if !objParam["user"].blank? && objParam["user"]["password"].blank?
       objParam["user"].except!("password")
       objParam["user"].except!("password_confirmation")
     end

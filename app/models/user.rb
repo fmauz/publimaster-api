@@ -11,6 +11,18 @@ class User < ActiveRecord::Base
                     }, :default_url => "/images/:style/missing.jpg"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
+  validates :role,
+            presence: true 
+
+  validates :email,
+            presence: true,
+            uniqueness: true,
+            email: true
+
+  validates :password,
+            presence: true,
+            confirmation: true
+
   belongs_to :role
   has_one :employee
 

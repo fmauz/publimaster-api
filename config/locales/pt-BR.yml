@@ -1,5 +1,15 @@
 ---
 pt-BR:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              already_in_use: 
+                default: email da está em uso
+            password_confirmation:
+              confirmation: nao é igual a Senha
   date:
     abbr_day_names:
     - Dom
