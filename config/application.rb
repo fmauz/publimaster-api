@@ -31,10 +31,7 @@ module Publimaster
     config.middleware.use Rack::Cors do
       allow do
         origins '*'
-        resource '*',
-          :headers => :any,
-          :expose  => ['access-token', 'expiry', 'token-type', 'uid', 'client', "X-Pagination-PerPage", "X-Pagination-TotalPages", "X-Pagination-CurrentPage", "X-Pagination-totalItems"],
-          :methods => [:get, :post, :options, :delete, :put]
+        resource '*', :headers => :any, :expose => %w[ access-token client expiry token-type uid ], :methods => [:get, :post, :delete, :put, :options, :head]
       end
     end
     

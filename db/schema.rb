@@ -48,7 +48,6 @@ ActiveRecord::Schema.define(version: 20150408153816) do
   create_table "clients", force: true do |t|
     t.string   "name"
     t.string   "cpf_cnpj"
-    t.string   "responsible"
     t.string   "director"
     t.string   "accountant"
     t.string   "client_group"
