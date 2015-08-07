@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::API
 	include ActionController::MimeResponds
+  include ActionController::Serialization
   include DeviseTokenAuth::Concerns::SetUserByToken
   
   before_filter :authenticate_user!

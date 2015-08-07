@@ -24,9 +24,9 @@ module Publimaster
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = 'pt-BR'
 
-    config.to_prepare do
-      DeviseTokenAuth::SessionsController.skip_before_filter :authenticate_user!
-    end
+    # config.to_prepare do
+    #   DeviseTokenAuth::SessionsController.skip_before_filter :authenticate_user!
+    # end
 
     config.middleware.use Rack::Cors do
       allow do

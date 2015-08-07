@@ -24,6 +24,8 @@ gem 'will_paginate'
 gem 'unicorn'
 gem 'rails_12factor'
 
+gem 'highline'
+
 gem 'paperclip'
 
 gem 'capistrano', '~> 3.3.0'
