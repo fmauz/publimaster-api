@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  mount_devise_token_auth_for 'User', at: 'auth', format: :json
+  mount_devise_token_auth_for 'User', at: 'auth', skip: [:omniauth_callbacks]
 
 	resources :clients
   resources :street_suffixes
