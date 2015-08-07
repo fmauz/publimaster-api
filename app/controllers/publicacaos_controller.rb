@@ -1,4 +1,6 @@
 class PublicacaosController < ApplicationController
+  before_filter :authenticate_user!
+  
   def index
     @publicacaos = Publicacao
 

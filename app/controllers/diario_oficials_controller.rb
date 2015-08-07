@@ -1,4 +1,6 @@
 class DiarioOficialsController < ApplicationController
+  before_filter :authenticate_user!
+  
   def index
     @diario_oficials = DiarioOficial.all
 

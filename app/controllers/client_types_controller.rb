@@ -1,4 +1,6 @@
 class ClientTypesController < ApplicationController
+  before_filter :authenticate_user!
+  
   def index
     @client_types = ClientType.all
 

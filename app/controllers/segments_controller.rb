@@ -1,4 +1,6 @@
 class SegmentsController < ApplicationController
+  before_filter :authenticate_user!
+  
   def index
     @segments = Segment.all
 

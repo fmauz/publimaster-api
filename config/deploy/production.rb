@@ -1,4 +1,6 @@
-server "201.76.167.41", user: 'publimaster', roles: %w{web app}
+set :stage, :production
+
+server "10.0.0.254", user: 'publimaster', roles: %w{web app}
 
 set :application, "publimaster-api"
 

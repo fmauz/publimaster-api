@@ -1,4 +1,5 @@
 class RetrancasController < ApplicationController
+  before_filter :authenticate_user!
 
   def index
     @retrancas = Retranca.all.paginate :page => params[:page]

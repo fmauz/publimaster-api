@@ -3,8 +3,6 @@ class ApplicationController < ActionController::API
   include ActionController::Serialization
   include DeviseTokenAuth::Concerns::SetUserByToken
   
-  before_filter :authenticate_user!
-
   def set_header_pagination( collection )
     response.header["X-Pagination-PerPage"] = collection.per_page.to_s
     response.headers["X-Pagination-TotalPages"] = collection.total_pages.to_s

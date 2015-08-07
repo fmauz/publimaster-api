@@ -1,4 +1,6 @@
 class JornalsController < ApplicationController
+  before_filter :authenticate_user!
+  
   def index
     @jornals = Jornal.all
 

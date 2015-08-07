@@ -1,4 +1,6 @@
 class StreetSuffixesController < ApplicationController
+  before_filter :authenticate_user!
+  
   def index
     @street_suffixes = StreetSuffix.all
 

@@ -1,4 +1,6 @@
 class MaterialsController < ApplicationController
+  before_filter :authenticate_user!
+  
   def index
     @materials = Material.all
 
